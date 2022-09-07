@@ -29,7 +29,7 @@ while True:
     #截图直播或会议
     DingLive = pyautogui.locateOnScreen(DingLiveIcon)
     DingMeeting = pyautogui.locateOnScreen(DingMeetingIcon)
-    DingMeetingCall = pyautogui.locateOnScreen(DingMeetingCallIcon,confidence=0.9)
+    DingMeetingCall = pyautogui.locateOnScreen(DingMeetingCallIcon)
 
     #判断课程类型并执行加入过程
 
