@@ -7,7 +7,7 @@ import sys
 pyautogui.FAILSAFE = True #自动防故障
 
 #版本确认
-version = "0.0.1" #版本号
+version = "0.0.2" #版本号
 line = "a" #产品线
 print("当前版本：" + version + line)
 print("程序运行中")
@@ -18,6 +18,7 @@ DingMeetingIcon = Image.open(r"./source/DingMeetingIcon.png")
 DingMicIcon = Image.open(r"./source/DingMicIcon.png")
 DingCamIcon = Image.open(r"./source/DingCamIcon.png")
 DingEnterIcon = Image.open(r"./source/DingEnterIcon.png")
+DingSignIcon = Image.open(r"./source/DingSignIcon.png")
 
 while True:
     time.sleep(1) #延时执行
@@ -29,7 +30,17 @@ while True:
     if DingLive:
         x,y,width,height = DingLive
         pyautogui.click(x,y,button="left")
-        sys.exit() #进入后退出程序
+        #等待签到
+        while True:
+            time.sleep(1)#延时执行
+            DingSign = pyautogui.locateOnScreen(DingSignIcon)#截图签到图标
+
+            #签到
+            if DingSign:
+                x,y,width,height = DingSign
+                pyautogui.click(x,y,button="left")
+                print("签到完成")
+
 
     if DingMeeting:
         x,y,width,height = DingMeeting
@@ -68,4 +79,5 @@ while True:
             else:
                 break
 
+        print("进入会议成功，程序即将退出")
         sys.exit() #进入后退出程序
