@@ -8,12 +8,12 @@ import cv2
 pyautogui.FAILSAFE = True #自动防故障
 
 #版本确认
-version = "0.0.2" #版本号
-line = "b-1" #产品线
+version = "0.1.0" #版本号
+line = "a" #产品线
 print("当前版本：" + version + line)
-print("程序运行中")
+print("程序运行中，请保持钉钉位于窗口图层最上方")
 
-#预加载目标图像 todo:异常处理
+#预加载目标图像
 DingLiveIcon = Image.open(r"./source/DingLiveIcon.png")
 DingMeetingIcon = Image.open(r"./source/DingMeetingIcon.png")
 DingMeetingCallIcon = Image.open(r"./source/DingMeetingCallIcon.png")
